@@ -49,7 +49,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>PICOROJO.ico</ApplicationIcon>
+    <ApplicationIcon>imagen.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -131,24 +131,6 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form4.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="LoginForm1.Designer.vb">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </Compile>
@@ -172,19 +154,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ORMDataModel2Code\ConnectionHelper.vb" />
-    <Compile Include="ORMDataModel2Code\Horarios.Designer.vb">
+    <Compile Include="ORMDataModel1Code\Barberos.Designer.vb">
+      <DependentUpon>Barberos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Barberos.vb" />
+    <Compile Include="ORMDataModel1Code\ConnectionHelper.vb" />
+    <Compile Include="ORMDataModel1Code\Horarios.Designer.vb">
       <DependentUpon>Horarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="ORMDataModel2Code\Horarios.vb" />
-    <Compile Include="ORMDataModel2Code\Turnos.Designer.vb">
+    <Compile Include="ORMDataModel1Code\Horarios.vb" />
+    <Compile Include="ORMDataModel1Code\Servicios.Designer.vb">
+      <DependentUpon>Servicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Servicios.vb" />
+    <Compile Include="ORMDataModel1Code\Turnos.Designer.vb">
       <DependentUpon>Turnos.vb</DependentUpon>
     </Compile>
-    <Compile Include="ORMDataModel2Code\Turnos.vb" />
-    <Compile Include="ORMDataModel2Code\Usuarios.Designer.vb">
+    <Compile Include="ORMDataModel1Code\Turnos.vb" />
+    <Compile Include="ORMDataModel1Code\Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="ORMDataModel2Code\Usuarios.vb" />
+    <Compile Include="ORMDataModel1Code\Usuarios.vb" />
     <Compile Include="WaitForm1.Designer.vb">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </Compile>
@@ -196,15 +186,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
@@ -232,13 +213,15 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="ORMDataModel2.xpo" />
-    <None Include="ORMDataModel2.xpo.diagram">
-      <DependentUpon>ORMDataModel2.xpo</DependentUpon>
+    <None Include="ORMDataModel1.xpo" />
+    <None Include="ORMDataModel1.xpo.diagram">
+      <DependentUpon>ORMDataModel1.xpo</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="imagen.jpg" />
+    <Content Include="imagen.ico" />
     <Content Include="PICOROJO.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

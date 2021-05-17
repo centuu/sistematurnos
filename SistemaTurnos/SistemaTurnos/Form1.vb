@@ -1,18 +1,15 @@
 ﻿Imports DevExpress.Xpo
-Imports DevExpress.XtraBars
+Imports DevExpress.Xpo.DB
+Imports DevExpress.XtraGrid.Views.Base
 Imports DevExpress.XtraGrid.Views.Grid
 Public Class Form1
     Dim Session1 As Session = XpoHelper.GetNewSession
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SplashScreenManager2.ShowWaitForm()
-        Me.Text &= " - LOCAL " & NombreLocal
-        If ModoTest Then
-            Me.Text &= " (CONECTADO A TEST)"
-        End If
         XpCollection1.Session = Session1
         XpCollection2.Session = Session1
-        LabelControl6.Text = NroLocal
-        XpCollection2.CriteriaString = "NroLocal = " & NroLocal
+        XpCollection3.Session = Session1
+        XpCollection4.Session = Session1
         SplashScreenManager2.CloseWaitForm()
     End Sub
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -48,18 +45,16 @@ Public Class Form1
                 MsgBox("Debe ingresar un horario.", vbOKOnly + vbExclamation, "Atencion")
                 Exit Sub
             End If
-            Session1.ExecuteNonQuery("INSERT INTO Turnos(NroLocal, Fecha, Horario, NroOrden, Cliente, dniCliente, telCliente, mailCliente) VALUES(" & NroLocal & ", '" & DateEdit1.Text & "', " & idHorario & ", " & NroOrden & ", '" & TextEdit1.Text & "', '" & TextEdit2.Text & "', '" & TextEdit3.Text & "', '" & TextEdit4.Text & "')")
-            'DateEdit1.DateTime.DayOfWeek.ToString.ToUpper
-            cuerpoMailstring = "<html><body>HOLA " & TextEdit1.Text & " <br /><br />
-TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
-<br /><br /><b>LOCAL:</b> " & NombreLocal & "
-<br /><br /><b>DIA:</b> " & DateEdit1.Text & "
-<br /><br /><b>HORA:</b> " & ComboBoxEdit1.Text & "
-<br /><br /><b>ORDEN:</b> " & NroOrden & "
-<br /><br />EN CASO DE QUERER CANCELAR ESTE TURNO PODES COMUNICARTE AL " & TelLocal & " DE " & horarioLocal & "
-<br /><br /><br />No responder a este correo.
-<br /><br /></body></html>"
-            Sendmail("TURNO ASIGNADO", TextEdit4.Text, Application.StartupPath & "\1.jpg")
+            If LookUpEdit1.EditValue = Nothing Then
+                MsgBox("Debe ingresar un barbero.", vbOKOnly + vbExclamation, "Atencion")
+                Exit Sub
+            End If
+            If LookUpEdit2.EditValue = Nothing Then
+                MsgBox("Debe ingresar un servicio.", vbOKOnly + vbExclamation, "Atencion")
+                Exit Sub
+            End If
+            Dim idTurno As Integer = Session1.ExecuteScalar("SELECT MAX(idTurno) FROM Turnos") + 1
+            Session1.ExecuteNonQuery("INSERT INTO Turnos(idTurno, Fecha, Horario, NroOrden, Cliente, dniCliente, telCliente, mailCliente) VALUES(" & idTurno & ", '" & DateEdit1.Text & "', " & idHorario & ", " & NroOrden & ", '" & TextEdit1.Text & "', '" & TextEdit2.Text & "', '" & TextEdit3.Text & "', '" & TextEdit4.Text & "')")
             MsgBox("El turno fue asignado correctamente!", vbOKOnly + vbInformation, "Hecho")
         Catch ex As Exception
             MsgBox("No se ha podido asignar el turno.", vbOKOnly + vbExclamation, "Atencion")
@@ -70,10 +65,13 @@ TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
         Session1.DropIdentityMap()
         XpCollection1.Session = Session1
         XpCollection2.Session = Session1
+        XpCollection3.Session = Session1
+        XpCollection4.Session = Session1
         XpCollection1.Reload()
         XpCollection2.Reload()
+        XpCollection3.Reload()
+        XpCollection4.Reload()
         GridView1.RefreshData()
-        XpCollection2.CriteriaString = "NroLocal = " & NroLocal
         TextEdit1.Text = ""
         TextEdit2.Text = ""
         TextEdit3.Text = ""
@@ -81,6 +79,8 @@ TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
         DateEdit1.EditValue = Nothing
         ComboBoxEdit1.SelectedIndex = -1
         ComboBoxEdit1.Properties.Items.Clear()
+        LookUpEdit1.EditValue = Nothing
+        LookUpEdit2.EditValue = Nothing
     End Sub
     Private Sub DateEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles DateEdit1.EditValueChanged
         If DateEdit1.EditValue <> Nothing Then
@@ -89,8 +89,8 @@ TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
                 ComboBoxEdit1.Properties.Items.Clear()
                 Dim resultData = Session1.ExecuteQuery("SELECT idHorario, descripcion FROM Horarios")
                 For j As Integer = 0 To resultData.ResultSet(0).Rows.Length - 1
-                    Dim Cupo As Integer = Session1.ExecuteScalar("SELECT COUNT(*) FROM Turnos WHERE Fecha = '" & DateEdit1.Text & "' AND Horario = " & resultData.ResultSet(0).Rows(j).Values(0) & " AND NroLocal = " & NroLocal)
-                    If Cupo < CupoLocal Then
+                    Dim Cupo As Integer = Session1.ExecuteScalar("SELECT COUNT(idTurno) FROM Turnos WHERE Fecha = '" & DateEdit1.Text & "' AND Horario = " & resultData.ResultSet(0).Rows(j).Values(0))
+                    If Cupo = 0 Then
                         ComboBoxEdit1.Properties.Items.Add(resultData.ResultSet(0).Rows(j).Values(1))
                     End If
                 Next
@@ -112,25 +112,8 @@ TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
         e.EditForm.StartPosition = FormStartPosition.CenterParent
     End Sub
     Private Sub GridView1_EditFormPrepared(sender As Object, e As EditFormPreparedEventArgs) Handles GridView1.EditFormPrepared
-        'e.BindableControls(colidTurno).Enabled = False
         e.BindableControls(colFecha).Enabled = False
         e.BindableControls(colHorario).Enabled = False
-        e.BindableControls(colNroOrden).Enabled = False
-        e.BindableControls(colCliente).Enabled = False
-        e.BindableControls(coldniCliente).Enabled = False
-        e.BindableControls(coltelCliente).Enabled = False
-        e.BindableControls(colmailCliente).Enabled = False
-    End Sub
-    Private Sub BarButtonItem1_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        If MsgBox("Deseas cancelar este turno?", vbYesNo + vbQuestion, "Cancelar Turno") = vbYes Then
-            Try
-                Session1.ExecuteNonQuery("DELETE FROM Turnos WHERE idTurno = " & GridView1.GetFocusedRowCellValue(colidTurno))
-                MsgBox("El turno fue cancelado.", vbOKOnly + vbInformation, "Hecho")
-            Catch ex As Exception
-                MsgBox("No se ha podido cancelar el turno.", vbOKOnly + vbExclamation, "Atencion")
-            End Try
-            Limpiar()
-        End If
     End Sub
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         Try
@@ -165,22 +148,46 @@ TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
                 MsgBox("Debe ingresar un horario.", vbOKOnly + vbExclamation, "Atencion")
                 Exit Sub
             End If
+            If LookUpEdit1.EditValue = Nothing Then
+                MsgBox("Debe ingresar un barbero.", vbOKOnly + vbExclamation, "Atencion")
+                Exit Sub
+            End If
+            If LookUpEdit2.EditValue = Nothing Then
+                MsgBox("Debe ingresar un servicio.", vbOKOnly + vbExclamation, "Atencion")
+                Exit Sub
+            End If
             Session1.ExecuteNonQuery("UPDATE Turnos SET Fecha = '" & DateEdit1.Text & "', NroOrden = " & NroOrden & ", Horario = " & idHorario & " WHERE idTurno = " & GridView1.GetFocusedRowCellValue(colidTurno))
-            'DateEdit1.DateTime.DayOfWeek.ToString.ToUpper
-            cuerpoMailstring = "<html><body>HOLA " & TextEdit1.Text & " <br /><br />
-TE RECORDAMOS LOS DATOS DEL TURNO ASIGNADO PARA NUESTRO EVENTO:
-<br /><br /><b>LOCAL:</b> " & NombreLocal & "
-<br /><br /><b>DIA:</b> " & DateEdit1.Text & "
-<br /><br /><b>HORA:</b> " & ComboBoxEdit1.Text & "
-<br /><br /><b>ORDEN:</b> " & NroOrden & "
-<br /><br />EN CASO DE QUERER CANCELAR ESTE TURNO PODES COMUNICARTE AL " & TelLocal & " DE " & horarioLocal & "
-<br /><br /><br />No responder a este correo.
-<br /><br /></body></html>"
-            Sendmail("TURNO REPROGRAMADO", TextEdit4.Text, Application.StartupPath & "\1.jpg")
             MsgBox("El turno fue reprogramado correctamente!", vbOKOnly + vbInformation, "Hecho")
         Catch ex As Exception
             MsgBox("No se ha podido reprogramar el turno.", vbOKOnly + vbExclamation, "Atencion")
         End Try
         Limpiar()
+    End Sub
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        Limpiar()
+    End Sub
+    Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
+        GridView1.ShowRibbonPrintPreview()
+    End Sub
+    Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
+        If MsgBox("Deseas cancelar este turno?", vbYesNo + vbQuestion, "Cancelar Turno") = vbYes Then
+            Try
+                Session1.ExecuteNonQuery("DELETE FROM Turnos WHERE idTurno = " & GridView1.GetFocusedRowCellValue(colidTurno))
+                MsgBox("El turno fue cancelado.", vbOKOnly + vbInformation, "Hecho")
+            Catch ex As Exception
+                MsgBox("No se ha podido cancelar el turno.", vbOKOnly + vbExclamation, "Atencion")
+            End Try
+            Limpiar()
+        End If
+    End Sub
+    Private Sub GridView1_CustomUnboundColumnData(sender As Object, e As CustomColumnDataEventArgs) Handles GridView1.CustomUnboundColumnData
+        Try
+            Dim Resultset_Servicio As SelectedData = Session1.ExecuteQuery("SELECT Precio FROM Servicios WHERE idServicio = " & GridView1.GetListSourceRowCellValue(e.ListSourceRowIndex, colidServicio))
+            Select Case e.Column.Name
+                Case "GridColumn1"
+                    e.Value = Resultset_Servicio.ResultSet(0).Rows(0).Values(0)
+            End Select
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

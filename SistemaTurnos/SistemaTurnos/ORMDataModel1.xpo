@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eb9ac516-ab0e-4e28-9df4-4b4c5430ed0c" dbName="BdBarberia" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9IlNRTGl0ZSI+DQogIDxwYXJhbWV0ZXI+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImRhdGFiYXNlIiB2YWx1ZT0iQzpcVXNlcnNcamNlbnR1cmlvblxPbmVEcml2ZSAtIERYQyBQcm9kdWN0aW9uXERlc2t0b3Bcc2lzdGVtYXR1cm5vc1xTaXN0ZW1hVHVybm9zXEJkQmFyYmVyaWEuZGIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InBhc3N3b3JkIiB2YWx1ZT0iIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJyZWFkIG9ubHkiIHZhbHVlPSIxIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJnZW5lcmF0ZUNvbm5lY3Rpb25IZWxwZXIiIHZhbHVlPSJ0cnVlIiAvPg0KICA8L3BhcmFtZXRlcj4NCjwvRGV2RXhwcmVzc1hwb0dlbmVyYXRvclNldHRpbmdzPg==" namespace="BdBarberia" connectionString="XpoProvider=SQLite;Data Source=&quot;C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\BdBarberia.db&quot;" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="true" fieldNameCase="Unchanged" generateDefaultConstructors="false" generateClassesForViews="true" useNameOf="true" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="7bf110ac-a03c-4114-bc04-78cb1e66362e">
+      <xpObject Id="1d38b390-0d02-4fc9-b46c-5f0cbeaa4ca1" name="Barberos" baseClass="XPLiteObject" userFileName="Barberos" designerFileName="Barberos.Designer" className="Barberos" virtualBaseClass="XPLiteObject" persistent="Barberos" virtualName="Barberos">
+        <fields>
+          <generalXpObjectHasFields Id="98c8e8ad-475a-4b4e-af1c-0f5bc8f59786">
+            <field Id="74173848-dad4-4035-8ac3-42639f908bf8" name="idBarbero" columnType="Int64" key="true" persistent="idBarbero" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="d9e035e9-db8f-4ceb-ba2d-fcd8d188ce5b">
+            <field Id="858b24a0-542d-4ba2-860f-ec3d6a8b2a9c" name="Nombre" persistent="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="2d8c93e4-5b0f-4d08-a041-e9743d63335f">
+      <xpObject Id="ae3bff75-5ba5-425b-8988-54038d953f63" name="Horarios" baseClass="XPLiteObject" userFileName="Horarios" designerFileName="Horarios.Designer" className="Horarios" virtualBaseClass="XPLiteObject" persistent="Horarios" virtualName="Horarios">
+        <fields>
+          <generalXpObjectHasFields Id="2565f120-cf90-429d-a1c9-23800c3dc50e">
+            <field Id="a2b5bde2-128f-4c4f-aa4e-171dec4c2c02" name="idHorario" columnType="Int64" key="true" persistent="idHorario" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="fe5fbb85-5e65-4aa6-87c6-673bd842c86a">
+            <field Id="b786061b-ea5f-49c1-9617-5433efddfd67" name="descripcion" persistent="descripcion" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="391ecc60-a2bb-41a4-b4f7-30d80ee42244">
+      <xpObject Id="b1b5fb45-6acc-452f-b227-6a814059cc68" name="Servicios" baseClass="XPLiteObject" userFileName="Servicios" designerFileName="Servicios.Designer" className="Servicios" virtualBaseClass="XPLiteObject" persistent="Servicios" virtualName="Servicios">
+        <fields>
+          <generalXpObjectHasFields Id="cda491d6-f352-45f5-9170-428edef82bf1">
+            <field Id="30abd3df-bcca-4beb-bd58-e79c211dfa46" name="idServicio" columnType="Int64" key="true" persistent="idServicio" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="014d49da-b91b-4575-967f-24398b4b7e79">
+            <field Id="5add4bd8-a6f8-4288-8a13-2f1d5e193e0b" name="Descripcion" persistent="Descripcion" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4f9544b6-d574-4a91-a344-edeca2fca3e4">
+            <field Id="dae8e064-0d40-49f2-8dc3-f07fd91451c1" name="Precio" columnType="Int64" persistent="Precio" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="3cc78f30-04e6-4482-9205-84a1474f24f9">
+      <xpObject Id="2f110bb3-5b29-4247-a3cb-97d86c40e102" name="Turnos" baseClass="XPLiteObject" userFileName="Turnos" designerFileName="Turnos.Designer" className="Turnos" virtualBaseClass="XPLiteObject" persistent="Turnos" virtualName="Turnos">
+        <fields>
+          <generalXpObjectHasFields Id="ec627eda-32b6-4600-806a-4f2ce7bbc735">
+            <field Id="d509fe22-5742-4b9e-974a-6aa5637d7730" name="idTurno" columnType="Int64" key="true" persistent="idTurno" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c4552dc4-ef7c-4d82-b27b-a018c1d8c29f">
+            <field Id="d8b82f26-b054-45bf-b24e-6e1a89378496" name="Fecha" persistent="Fecha" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1c2b2046-661d-4c62-abad-162930409a55">
+            <field Id="ae51b400-96ad-4158-bdb9-c9c201bccbef" name="Horario" columnType="Int64" persistent="Horario" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b24152c3-8f10-44a6-869f-5fa2d6d743f2">
+            <field Id="df4380c6-675c-4180-8c76-49d9d40f64db" name="NroOrden" columnType="Int64" persistent="NroOrden" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b0293960-67b8-4274-8ad1-7eb396e542d4">
+            <field Id="b86562a6-50f0-4afa-ba9e-10af4c7bb2e9" name="Cliente" persistent="Cliente" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="597b4d6b-13ad-498e-a632-660506db30e6">
+            <field Id="33faebaa-421b-471c-b196-b1c03045c505" name="dniCliente" persistent="dniCliente" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5c152adc-aaec-4540-aa43-0415f990dad1">
+            <field Id="9d0f1f43-89a7-4325-9ec9-2446f8b77528" name="telCliente" persistent="telCliente" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="21a4b89c-0f14-4daa-a420-8004f5304955">
+            <field Id="dabd8273-29a5-43a0-ac5e-0285732a8ded" name="mailCliente" persistent="mailCliente" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7b6b99ea-cf76-4fe9-a0ce-3c3657cd6abd">
+            <field Id="68e3dcac-8a23-45cf-89fe-3345d956ed58" name="Observaciones" persistent="Observaciones" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1a01540e-dbc7-4b5b-be70-9d7770b9d4c0">
+            <field Id="76a37e96-acca-4340-b53e-6005764cab00" name="Reprogramo" persistent="Reprogramo" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="2" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0d7e0454-2103-41f4-b5ba-6d53350d76f0">
+            <field Id="d0b9dbc8-ea14-4a9f-b11e-a693ee7f77c9" name="idBarbero" columnType="Int64" persistent="idBarbero" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="690a3548-b59e-425a-b73f-b19b74fff360">
+            <field Id="4f278b5b-804b-4e3b-8857-ad46530cfb73" name="idServicio" columnType="Int64" persistent="idServicio" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="a7fe1f42-7d4e-467a-83f3-762bba6de187">
+      <xpObject Id="51092f95-90f3-4ed9-8940-323e1f6f2121" name="Usuarios" baseClass="XPLiteObject" userFileName="Usuarios" designerFileName="Usuarios.Designer" className="Usuarios" virtualBaseClass="XPLiteObject" persistent="Usuarios" virtualName="Usuarios">
+        <fields>
+          <generalXpObjectHasFields Id="a2115b30-38f1-4d73-b3f4-593a5b69cc84">
+            <field Id="a988a933-6b8f-4462-a95e-8065c057e6df" name="idUsuario" columnType="Int64" key="true" persistent="idUsuario" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="04e89dfe-c98e-43e8-9794-0134a91547b1">
+            <field Id="75a8af8c-ff8c-4554-9176-6c2ae320958b" name="Nombre" persistent="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="aa0684fc-17b1-438d-9886-978c576dca5f">
+            <field Id="3abe65eb-dbf9-4828-ace6-b3f36c029818" name="Clave" persistent="Clave" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="42c6d79d-e049-4b14-8a8d-24cd2868b908">
+            <field Id="6da390ec-4377-4054-9dea-fb5352bceb4b" name="Permisos" persistent="Permisos" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

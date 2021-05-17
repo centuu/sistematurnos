@@ -19,12 +19,7 @@ Public NotInheritable Class XpoHelper
         End Get
     End Property
     Public Shared Function GetDataLayer(autoCreationOption As AutoCreateOption) As IDataLayer
-        Dim conn
-        If ModoTest Then
-            conn = MSSqlConnectionProvider.GetConnectionString("localhost", "sa", "lobito1.2016", "TurnosMontagne")
-        Else
-            conn = MSSqlConnectionProvider.GetConnectionString("localhost", "sa", "lobito1.2016", "TurnosMontagne_Test")
-        End If
+        Dim conn = SQLiteConnectionProvider.GetConnectionString("BdBarberia.db")
         Return XpoDefault.GetDataLayer(conn, autoCreationOption)
     End Function
     Public Shared Function GetNewSession() As Session
