@@ -16,7 +16,7 @@ Public Class Form1
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Try
             Dim idHorario As Integer = Session1.ExecuteScalar("SELECT idHorario FROM Horarios WHERE descripcion = '" & ComboBoxEdit1.Text & "'")
-            Dim NroOrden As Integer = Session1.ExecuteScalar("SELECT MAX(NroOrden) FROM Turnos WHERE Fecha = '" & DateEdit1.Text & "' AND Horario = " & idHorario)
+            Dim NroOrden As Integer = Session1.ExecuteScalar("SELECT MAX(NroOrden) FROM Turnos WHERE Fecha = '" & DateEdit1.EditValue & "' AND Horario = " & idHorario)
             If NroOrden > 0 Then
                 NroOrden += 1
             Else
@@ -55,7 +55,7 @@ Public Class Form1
                 Exit Sub
             End If
             Dim idTurno As Integer = Session1.ExecuteScalar("SELECT MAX(idTurno) FROM Turnos") + 1
-            Session1.ExecuteNonQuery("INSERT INTO Turnos(idTurno, Fecha, Horario, NroOrden, Cliente, dniCliente, telCliente, mailCliente) VALUES(" & idTurno & ", '" & DateEdit1.Text & "', " & idHorario & ", " & NroOrden & ", '" & TextEdit1.Text & "', '" & TextEdit2.Text & "', '" & TextEdit3.Text & "', '" & TextEdit4.Text & "')")
+            Session1.ExecuteNonQuery("INSERT INTO Turnos(idTurno, Fecha, Horario, NroOrden, Cliente, dniCliente, telCliente, mailCliente) VALUES(" & idTurno & ", '" & DateEdit1.EditValue & "', " & idHorario & ", " & NroOrden & ", '" & TextEdit1.Text & "', '" & TextEdit2.Text & "', '" & TextEdit3.Text & "', '" & TextEdit4.Text & "')")
             MsgBox("El turno fue asignado correctamente!", vbOKOnly + vbInformation, "Hecho")
         Catch ex As Exception
             MsgBox("No se ha podido asignar el turno.", vbOKOnly + vbExclamation, "Atencion")
@@ -88,7 +88,7 @@ Public Class Form1
             Try
                 ComboBoxEdit1.SelectedIndex = -1
                 ComboBoxEdit1.Properties.Items.Clear()
-                Dim resultData = Session1.ExecuteQuery("SELECT idHorario, descripcion FROM Horarios")
+                Dim resultData As SelectedData = Session1.ExecuteQuery("SELECT idHorario, descripcion FROM Horarios")
                 For j As Integer = 0 To resultData.ResultSet(0).Rows.Length - 1
                     Dim Cupo As Integer = Session1.ExecuteScalar("SELECT COUNT(idTurno) FROM Turnos WHERE Fecha = '" & DateEdit1.EditValue & "' AND Horario = " & resultData.ResultSet(0).Rows(j).Values(0))
                     If Cupo = 0 Then
@@ -127,7 +127,7 @@ Public Class Form1
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         Try
             Dim idHorario As Integer = Session1.ExecuteScalar("SELECT idHorario FROM Horarios WHERE descripcion = '" & ComboBoxEdit1.Text & "'")
-            Dim NroOrden As Integer = Session1.ExecuteScalar("SELECT MAX(NroOrden) FROM Turnos WHERE Fecha = '" & DateEdit1.Text & "' AND Horario = " & idHorario)
+            Dim NroOrden As Integer = Session1.ExecuteScalar("SELECT MAX(NroOrden) FROM Turnos WHERE Fecha = '" & DateEdit1.EditValue & "' AND Horario = " & idHorario)
             If NroOrden > 0 Then
                 NroOrden += 1
             Else
@@ -165,7 +165,7 @@ Public Class Form1
                 MsgBox("Debe ingresar un servicio.", vbOKOnly + vbExclamation, "Atencion")
                 Exit Sub
             End If
-            Session1.ExecuteNonQuery("UPDATE Turnos SET Fecha = '" & DateEdit1.Text & "', NroOrden = " & NroOrden & ", Horario = " & idHorario & " WHERE idTurno = " & GridView1.GetFocusedRowCellValue(colidTurno))
+            Session1.ExecuteNonQuery("UPDATE Turnos SET Fecha = '" & DateEdit1.EditValue & "', NroOrden = " & NroOrden & ", Horario = " & idHorario & " WHERE idTurno = " & GridView1.GetFocusedRowCellValue(colidTurno))
             MsgBox("El turno fue reprogramado correctamente!", vbOKOnly + vbInformation, "Hecho")
         Catch ex As Exception
             MsgBox("No se ha podido reprogramar el turno.", vbOKOnly + vbExclamation, "Atencion")
@@ -207,5 +207,8 @@ Public Class Form1
     End Sub
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem4.ItemClick
         SERVICIOS.Show()
+    End Sub
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        HORARIOS.Show()
     End Sub
 End Class

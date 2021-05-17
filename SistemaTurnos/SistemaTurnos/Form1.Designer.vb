@@ -82,6 +82,7 @@ Partial Class Form1
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
@@ -656,9 +657,9 @@ Partial Class Form1
         Me.BarManager2.DockControls.Add(Me.BarDockControl3)
         Me.BarManager2.DockControls.Add(Me.BarDockControl4)
         Me.BarManager2.Form = Me
-        Me.BarManager2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.BarManager2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem1})
         Me.BarManager2.MainMenu = Me.Bar2
-        Me.BarManager2.MaxItemId = 3
+        Me.BarManager2.MaxItemId = 4
         '
         'Bar2
         '
@@ -666,7 +667,7 @@ Partial Class Form1
         Me.Bar2.DockCol = 0
         Me.Bar2.DockRow = 0
         Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem2), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem4)})
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem2), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem1)})
         Me.Bar2.OptionsBar.MultiLine = True
         Me.Bar2.OptionsBar.UseWholeRow = True
         Me.Bar2.Text = "Main menu"
@@ -688,6 +689,12 @@ Partial Class Form1
         Me.BarButtonItem4.Caption = "SERVICIOS"
         Me.BarButtonItem4.Id = 2
         Me.BarButtonItem4.Name = "BarButtonItem4"
+        '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "HORARIOS"
+        Me.BarButtonItem1.Id = 3
+        Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'BarDockControl1
         '
@@ -836,4 +843,5 @@ Partial Class Form1
     Friend WithEvents XpCollection4 As DevExpress.Xpo.XPCollection
     Friend WithEvents RepositoryItemLookUpEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
 End Class

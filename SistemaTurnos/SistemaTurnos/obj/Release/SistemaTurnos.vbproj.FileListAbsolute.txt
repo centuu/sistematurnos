@@ -574,3 +574,4 @@ C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurno
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.BARBEROS.resources
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.SERVICIOS.resources
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.USUARIOS.resources
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.HORARIOS.resources

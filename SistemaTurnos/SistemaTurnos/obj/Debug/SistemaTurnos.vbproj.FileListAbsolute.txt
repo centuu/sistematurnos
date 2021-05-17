@@ -575,3 +575,4 @@ C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurno
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Debug\SistemaTurnos.exe
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Debug\SistemaTurnos.xml
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Debug\SistemaTurnos.pdb
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Debug\SistemaTurnos.HORARIOS.resources
