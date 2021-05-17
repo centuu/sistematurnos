@@ -32,16 +32,17 @@ Partial Class HORARIOS
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colidHorario = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -118,16 +119,23 @@ Partial Class HORARIOS
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'XpCollection1
+        '
+        Me.XpCollection1.ObjectType = GetType(SistemaTurnos.BdBarberia.Horarios)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colidHorario, Me.coldescripcion})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
+        Me.GridView1.OptionsEditForm.EditFormColumnCount = 1
+        Me.GridView1.OptionsEditForm.PopupEditFormWidth = 500
+        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsNavigation.AutoFocusNewRow = True
+        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = True
+        Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowGroupPanel = False
-        '
-        'XpCollection1
-        '
-        Me.XpCollection1.ObjectType = GetType(SistemaTurnos.BdBarberia.Horarios)
         '
         'colidHorario
         '
@@ -148,6 +156,10 @@ Partial Class HORARIOS
         Me.coldescripcion.VisibleIndex = 1
         Me.coldescripcion.Width = 930
         '
+        'DefaultLookAndFeel1
+        '
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
+        '
         'HORARIOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -163,8 +175,8 @@ Partial Class HORARIOS
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -181,4 +193,5 @@ Partial Class HORARIOS
     Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
     Friend WithEvents colidHorario As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
 End Class

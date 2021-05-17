@@ -37,6 +37,7 @@ Partial Class SERVICIOS
         Me.colidServicio = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPrecio = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,6 +130,13 @@ Partial Class SERVICIOS
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colidServicio, Me.colDescripcion, Me.colPrecio})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
+        Me.GridView1.OptionsEditForm.EditFormColumnCount = 1
+        Me.GridView1.OptionsEditForm.PopupEditFormWidth = 500
+        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsNavigation.AutoFocusNewRow = True
+        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = True
+        Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'colidServicio
@@ -158,6 +166,10 @@ Partial Class SERVICIOS
         Me.colPrecio.Visible = True
         Me.colPrecio.VisibleIndex = 1
         Me.colPrecio.Width = 174
+        '
+        'DefaultLookAndFeel1
+        '
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
         'SERVICIOS
         '
@@ -193,4 +205,5 @@ Partial Class SERVICIOS
     Friend WithEvents colidServicio As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colPrecio As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
 End Class

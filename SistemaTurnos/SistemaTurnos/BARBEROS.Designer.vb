@@ -36,6 +36,7 @@ Partial Class BARBEROS
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colidBarbero = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,6 +157,10 @@ Partial Class BARBEROS
         Me.colNombre.VisibleIndex = 1
         Me.colNombre.Width = 921
         '
+        'DefaultLookAndFeel1
+        '
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
+        '
         'BARBEROS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -189,4 +194,5 @@ Partial Class BARBEROS
     Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
     Friend WithEvents colidBarbero As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colNombre As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
 End Class
