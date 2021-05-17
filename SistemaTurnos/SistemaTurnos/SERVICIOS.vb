@@ -49,6 +49,7 @@ Public Class SERVICIOS
             If MsgBox("¿Desea eliminar el servicio?", vbYesNo + vbQuestion, "Eliminar") = vbYes Then
                 Session1.ExecuteNonQuery("DELETE FROM Servicios WHERE idServicio = " & GridView1.GetFocusedRowCellValue(colidServicio))
                 XpCollection1.Reload()
+                GridView1.RefreshData()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -58,5 +59,8 @@ Public Class SERVICIOS
         editar = False
         GridView1.AddNewRow()
         GridView1.ShowEditForm()
+    End Sub
+    Private Sub SERVICIOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        XpCollection1.Session = Session1
     End Sub
 End Class

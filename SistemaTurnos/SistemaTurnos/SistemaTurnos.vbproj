@@ -270,7 +270,6 @@
   <ItemGroup>
     <None Include="imagen.jpg" />
     <Content Include="imagen.ico" />
-    <Content Include="PICOROJO.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\EmptyLicensesLicx.2.0.2\build\EmptyLicensesLicx.targets" Condition="Exists('..\packages\EmptyLicensesLicx.2.0.2\build\EmptyLicensesLicx.targets')" />

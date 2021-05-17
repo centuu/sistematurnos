@@ -90,7 +90,7 @@ Public Class Form1
                 ComboBoxEdit1.Properties.Items.Clear()
                 Dim resultData = Session1.ExecuteQuery("SELECT idHorario, descripcion FROM Horarios")
                 For j As Integer = 0 To resultData.ResultSet(0).Rows.Length - 1
-                    Dim Cupo As Integer = Session1.ExecuteScalar("SELECT COUNT(idTurno) FROM Turnos WHERE Fecha = '" & DateEdit1.Text & "' AND Horario = " & resultData.ResultSet(0).Rows(j).Values(0))
+                    Dim Cupo As Integer = Session1.ExecuteScalar("SELECT COUNT(idTurno) FROM Turnos WHERE Fecha = '" & DateEdit1.EditValue & "' AND Horario = " & resultData.ResultSet(0).Rows(j).Values(0))
                     If Cupo = 0 Then
                         ComboBoxEdit1.Properties.Items.Add(resultData.ResultSet(0).Rows(j).Values(1))
                     End If
@@ -105,6 +105,14 @@ Public Class Form1
         TextEdit2.Text = GridView1.GetFocusedRowCellValue(coldniCliente)
         TextEdit3.Text = GridView1.GetFocusedRowCellValue(coltelCliente)
         TextEdit4.Text = GridView1.GetFocusedRowCellValue(colmailCliente)
+        LookUpEdit1.EditValue = GridView1.GetFocusedRowCellValue(colidBarbero)
+        LookUpEdit2.EditValue = GridView1.GetFocusedRowCellValue(colidServicio)
+        DateEdit1.EditValue = GridView1.GetFocusedRowCellValue(colFecha)
+        Try
+            Dim resultSet As SelectedData = Session1.ExecuteQuery("SELECT descripcion FROM Horarios WHERE idHorario = " & GridView1.GetFocusedRowCellValue(colHorario))
+            ComboBoxEdit1.Text = resultSet.ResultSet(0).Rows(0).Values(0)
+        Catch ex As Exception
+        End Try
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Application.Exit()

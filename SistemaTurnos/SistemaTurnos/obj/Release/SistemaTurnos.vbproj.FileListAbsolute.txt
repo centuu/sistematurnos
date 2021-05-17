@@ -563,3 +563,14 @@ C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurno
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\ru\DevExpress.XtraNavBar.v18.1.resources.dll
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.vbproj.CopyComplete
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.CAMBIARCLAVE.resources
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\EntityFramework.dll
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\System.Data.SQLite.dll
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\EntityFramework.xml
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\System.Data.SQLite.xml
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.BARBEROS.resources
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.SERVICIOS.resources
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.USUARIOS.resources

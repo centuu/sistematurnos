@@ -49,6 +49,7 @@ Public Class BARBEROS
             If MsgBox("¿Desea eliminar el barbero?", vbYesNo + vbQuestion, "Eliminar") = vbYes Then
                 Session1.ExecuteNonQuery("DELETE FROM Barberos WHERE idBarbero = " & GridView1.GetFocusedRowCellValue(colidBarbero))
                 XpCollection1.Reload()
+                GridView1.RefreshData()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -58,5 +59,8 @@ Public Class BARBEROS
         editar = False
         GridView1.AddNewRow()
         GridView1.ShowEditForm()
+    End Sub
+    Private Sub BARBEROS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        XpCollection1.Session = Session1
     End Sub
 End Class

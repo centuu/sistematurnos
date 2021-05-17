@@ -32,8 +32,8 @@ Partial Class SERVICIOS
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colidServicio = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPrecio = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -41,8 +41,8 @@ Partial Class SERVICIOS
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -55,7 +55,7 @@ Partial Class SERVICIOS
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.RibbonControl1)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControl1)
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1114, 717)
-        Me.SplitContainerControl1.SplitterPosition = 197
+        Me.SplitContainerControl1.SplitterPosition = 202
         Me.SplitContainerControl1.TabIndex = 0
         '
         'RibbonControl1
@@ -107,7 +107,6 @@ Partial Class SERVICIOS
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "Acciones"
         '
         'GridControl1
         '
@@ -117,9 +116,13 @@ Partial Class SERVICIOS
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1114, 511)
+        Me.GridControl1.Size = New System.Drawing.Size(1114, 506)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'XpCollection1
+        '
+        Me.XpCollection1.ObjectType = GetType(SistemaTurnos.BdBarberia.Servicios)
         '
         'GridView1
         '
@@ -127,10 +130,6 @@ Partial Class SERVICIOS
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowGroupPanel = False
-        '
-        'XpCollection1
-        '
-        Me.XpCollection1.ObjectType = GetType(SistemaTurnos.BdBarberia.Servicios)
         '
         'colidServicio
         '
@@ -175,8 +174,8 @@ Partial Class SERVICIOS
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

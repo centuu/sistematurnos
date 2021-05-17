@@ -84,7 +84,7 @@ Partial Class USUARIOS
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.RibbonControl1)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControl1)
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1340, 1050)
-        Me.SplitContainerControl1.SplitterPosition = 198
+        Me.SplitContainerControl1.SplitterPosition = 201
         Me.SplitContainerControl1.TabIndex = 0
         '
         'RibbonControl1
@@ -190,7 +190,7 @@ Partial Class USUARIOS
         Me.GridControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemCheckedComboBoxEdit2})
-        Me.GridControl1.Size = New System.Drawing.Size(1340, 843)
+        Me.GridControl1.Size = New System.Drawing.Size(1340, 840)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -244,8 +244,6 @@ Partial Class USUARIOS
         Me.colPermisos.FieldName = "Permisos"
         Me.colPermisos.MinWidth = 30
         Me.colPermisos.Name = "colPermisos"
-        Me.colPermisos.Visible = True
-        Me.colPermisos.VisibleIndex = 3
         Me.colPermisos.Width = 658
         '
         'RepositoryItemTextEdit1

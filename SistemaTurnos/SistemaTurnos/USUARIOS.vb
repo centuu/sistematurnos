@@ -32,6 +32,7 @@ Public Class USUARIOS
                 SplashScreenManager1.ShowWaitForm()
                 Session1.ExecuteNonQuery("DELETE FROM Usuarios WHERE idUsuario = " & GridView1.GetFocusedRowCellValue(colidUsuario))
                 XpCollection1.Reload()
+                GridView1.RefreshData()
                 SplashScreenManager1.CloseWaitForm()
             End If
         Catch ex As Exception
