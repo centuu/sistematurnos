@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Xpo
 Imports DevExpress.Xpo.DB
+Imports DevExpress.XtraBars
 Imports DevExpress.XtraGrid.Views.Base
 Imports DevExpress.XtraGrid.Views.Grid
 Public Class Form1
@@ -189,5 +190,14 @@ Public Class Form1
             End Select
         Catch ex As Exception
         End Try
+    End Sub
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        USUARIOS.Show()
+    End Sub
+    Private Sub BarButtonItem3_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem3.ItemClick
+        BARBEROS.Show()
+    End Sub
+    Private Sub BarButtonItem4_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+        SERVICIOS.Show()
     End Sub
 End Class

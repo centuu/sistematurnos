@@ -39,6 +39,7 @@ Partial Class LoginForm1
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,6 +114,14 @@ Partial Class LoginForm1
         '
         Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(12, 248)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(112, 34)
+        Me.SimpleButton1.TabIndex = 6
+        Me.SimpleButton1.Text = "Cambiar clave"
+        '
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
@@ -121,6 +130,7 @@ Partial Class LoginForm1
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(602, 295)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.PasswordTextBox)
@@ -143,4 +153,5 @@ Partial Class LoginForm1
     End Sub
 
     Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

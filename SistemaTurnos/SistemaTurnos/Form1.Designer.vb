@@ -29,7 +29,9 @@ Partial Class Form1
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LookUpEdit2 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.XpCollection4 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
@@ -50,9 +52,27 @@ Partial Class Form1
         Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.colidTurno = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFecha = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colHorario = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.colNroOrden = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCliente = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coldniCliente = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coltelCliente = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colmailCliente = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colObservaciones = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colReprogramo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
+        Me.colidBarbero = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.colidServicio = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.RepositoryItemComboBox2 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.SplashScreenManager2 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.SistemaTurnos.WaitForm1), True, True)
@@ -66,32 +86,14 @@ Partial Class Form1
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.colidTurno = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFecha = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colHorario = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colNroOrden = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCliente = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.coldniCliente = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.coltelCliente = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colmailCliente = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colObservaciones = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colReprogramo = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colidBarbero = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colidServicio = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.RepositoryItemLookUpEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.XpCollection4 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.RepositoryItemLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,19 +103,17 @@ Partial Class Form1
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemComboBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -189,6 +189,10 @@ Partial Class Form1
         Me.LookUpEdit2.Size = New System.Drawing.Size(176, 28)
         Me.LookUpEdit2.TabIndex = 13
         '
+        'XpCollection4
+        '
+        Me.XpCollection4.ObjectType = GetType(SistemaTurnos.BdBarberia.Servicios)
+        '
         'LookUpEdit1
         '
         Me.LookUpEdit1.Location = New System.Drawing.Point(231, 139)
@@ -202,6 +206,10 @@ Partial Class Form1
         Me.LookUpEdit1.Properties.ValueMember = "idBarbero"
         Me.LookUpEdit1.Size = New System.Drawing.Size(176, 28)
         Me.LookUpEdit1.TabIndex = 12
+        '
+        'XpCollection3
+        '
+        Me.XpCollection3.ObjectType = GetType(SistemaTurnos.BdBarberia.Barberos)
         '
         'LabelControl1
         '
@@ -219,7 +227,7 @@ Partial Class Form1
         Me.SimpleButton3.Location = New System.Drawing.Point(151, 386)
         Me.SimpleButton3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(228, 42)
+        Me.SimpleButton3.Size = New System.Drawing.Size(256, 42)
         Me.SimpleButton3.TabIndex = 10
         Me.SimpleButton3.Text = "LIMPIAR CAMPOS"
         '
@@ -230,7 +238,7 @@ Partial Class Form1
         Me.SimpleButton2.Location = New System.Drawing.Point(153, 334)
         Me.SimpleButton2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(227, 42)
+        Me.SimpleButton2.Size = New System.Drawing.Size(254, 42)
         Me.SimpleButton2.TabIndex = 9
         Me.SimpleButton2.Text = "REPROGRAMAR TURNO"
         '
@@ -241,7 +249,7 @@ Partial Class Form1
         Me.SimpleButton1.Location = New System.Drawing.Point(153, 282)
         Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(227, 42)
+        Me.SimpleButton1.Size = New System.Drawing.Size(254, 42)
         Me.SimpleButton1.TabIndex = 8
         Me.SimpleButton1.Text = "ASIGNAR TURNO"
         '
@@ -380,7 +388,7 @@ Partial Class Form1
         Me.SimpleButton5.Location = New System.Drawing.Point(976, 12)
         Me.SimpleButton5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SimpleButton5.Name = "SimpleButton5"
-        Me.SimpleButton5.Size = New System.Drawing.Size(215, 42)
+        Me.SimpleButton5.Size = New System.Drawing.Size(215, 49)
         Me.SimpleButton5.TabIndex = 12
         Me.SimpleButton5.Text = "CANCELAR TURNO"
         '
@@ -392,7 +400,7 @@ Partial Class Form1
         Me.SimpleButton4.Location = New System.Drawing.Point(1199, 12)
         Me.SimpleButton4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SimpleButton4.Name = "SimpleButton4"
-        Me.SimpleButton4.Size = New System.Drawing.Size(161, 42)
+        Me.SimpleButton4.Size = New System.Drawing.Size(161, 49)
         Me.SimpleButton4.TabIndex = 11
         Me.SimpleButton4.Text = "IMPRIMIR"
         '
@@ -416,6 +424,10 @@ Partial Class Form1
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'XpCollection1
+        '
+        Me.XpCollection1.ObjectType = GetType(SistemaTurnos.BdBarberia.Turnos)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colidTurno, Me.colFecha, Me.colHorario, Me.colNroOrden, Me.colCliente, Me.coldniCliente, Me.coltelCliente, Me.colmailCliente, Me.colObservaciones, Me.colReprogramo, Me.colidBarbero, Me.colidServicio, Me.GridColumn1})
@@ -436,6 +448,172 @@ Partial Class Form1
         Me.GridView1.OptionsView.ShowGroupPanel = False
         Me.GridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colFecha, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
+        'colidTurno
+        '
+        Me.colidTurno.FieldName = "idTurno"
+        Me.colidTurno.MinWidth = 30
+        Me.colidTurno.Name = "colidTurno"
+        Me.colidTurno.Width = 112
+        '
+        'colFecha
+        '
+        Me.colFecha.FieldName = "Fecha"
+        Me.colFecha.MinWidth = 30
+        Me.colFecha.Name = "colFecha"
+        Me.colFecha.Visible = True
+        Me.colFecha.VisibleIndex = 0
+        Me.colFecha.Width = 132
+        '
+        'colHorario
+        '
+        Me.colHorario.ColumnEdit = Me.RepositoryItemLookUpEdit2
+        Me.colHorario.FieldName = "Horario"
+        Me.colHorario.MinWidth = 30
+        Me.colHorario.Name = "colHorario"
+        Me.colHorario.Visible = True
+        Me.colHorario.VisibleIndex = 1
+        Me.colHorario.Width = 120
+        '
+        'RepositoryItemLookUpEdit2
+        '
+        Me.RepositoryItemLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit2.DataSource = Me.XpCollection2
+        Me.RepositoryItemLookUpEdit2.DisplayMember = "descripcion"
+        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
+        Me.RepositoryItemLookUpEdit2.NullText = ""
+        Me.RepositoryItemLookUpEdit2.ValueMember = "idHorario"
+        '
+        'XpCollection2
+        '
+        Me.XpCollection2.ObjectType = GetType(SistemaTurnos.BdBarberia.Horarios)
+        '
+        'colNroOrden
+        '
+        Me.colNroOrden.FieldName = "NroOrden"
+        Me.colNroOrden.MinWidth = 30
+        Me.colNroOrden.Name = "colNroOrden"
+        Me.colNroOrden.Width = 111
+        '
+        'colCliente
+        '
+        Me.colCliente.FieldName = "Cliente"
+        Me.colCliente.MinWidth = 30
+        Me.colCliente.Name = "colCliente"
+        Me.colCliente.Visible = True
+        Me.colCliente.VisibleIndex = 0
+        Me.colCliente.Width = 239
+        '
+        'coldniCliente
+        '
+        Me.coldniCliente.Caption = "DNI"
+        Me.coldniCliente.FieldName = "dniCliente"
+        Me.coldniCliente.MinWidth = 30
+        Me.coldniCliente.Name = "coldniCliente"
+        Me.coldniCliente.Visible = True
+        Me.coldniCliente.VisibleIndex = 7
+        Me.coldniCliente.Width = 100
+        '
+        'coltelCliente
+        '
+        Me.coltelCliente.Caption = "Telefono"
+        Me.coltelCliente.FieldName = "telCliente"
+        Me.coltelCliente.MinWidth = 30
+        Me.coltelCliente.Name = "coltelCliente"
+        Me.coltelCliente.Visible = True
+        Me.coltelCliente.VisibleIndex = 5
+        Me.coltelCliente.Width = 100
+        '
+        'colmailCliente
+        '
+        Me.colmailCliente.Caption = "Mail"
+        Me.colmailCliente.FieldName = "mailCliente"
+        Me.colmailCliente.MinWidth = 30
+        Me.colmailCliente.Name = "colmailCliente"
+        Me.colmailCliente.Visible = True
+        Me.colmailCliente.VisibleIndex = 6
+        Me.colmailCliente.Width = 100
+        '
+        'colObservaciones
+        '
+        Me.colObservaciones.FieldName = "Observaciones"
+        Me.colObservaciones.MinWidth = 30
+        Me.colObservaciones.Name = "colObservaciones"
+        Me.colObservaciones.Visible = True
+        Me.colObservaciones.VisibleIndex = 9
+        Me.colObservaciones.Width = 113
+        '
+        'colReprogramo
+        '
+        Me.colReprogramo.ColumnEdit = Me.RepositoryItemComboBox1
+        Me.colReprogramo.FieldName = "Reprogramo"
+        Me.colReprogramo.MinWidth = 30
+        Me.colReprogramo.Name = "colReprogramo"
+        Me.colReprogramo.Visible = True
+        Me.colReprogramo.VisibleIndex = 8
+        Me.colReprogramo.Width = 100
+        '
+        'RepositoryItemComboBox1
+        '
+        Me.RepositoryItemComboBox1.AutoHeight = False
+        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"SI", "NO"})
+        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
+        '
+        'colidBarbero
+        '
+        Me.colidBarbero.Caption = "Barbero"
+        Me.colidBarbero.ColumnEdit = Me.RepositoryItemLookUpEdit3
+        Me.colidBarbero.FieldName = "idBarbero"
+        Me.colidBarbero.MinWidth = 30
+        Me.colidBarbero.Name = "colidBarbero"
+        Me.colidBarbero.Visible = True
+        Me.colidBarbero.VisibleIndex = 4
+        Me.colidBarbero.Width = 160
+        '
+        'RepositoryItemLookUpEdit3
+        '
+        Me.RepositoryItemLookUpEdit3.AutoHeight = False
+        Me.RepositoryItemLookUpEdit3.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit3.DataSource = Me.XpCollection3
+        Me.RepositoryItemLookUpEdit3.DisplayMember = "Nombre"
+        Me.RepositoryItemLookUpEdit3.Name = "RepositoryItemLookUpEdit3"
+        Me.RepositoryItemLookUpEdit3.NullText = ""
+        Me.RepositoryItemLookUpEdit3.ValueMember = "idBarbero"
+        '
+        'colidServicio
+        '
+        Me.colidServicio.Caption = "Servicio"
+        Me.colidServicio.ColumnEdit = Me.RepositoryItemLookUpEdit4
+        Me.colidServicio.FieldName = "idServicio"
+        Me.colidServicio.MinWidth = 30
+        Me.colidServicio.Name = "colidServicio"
+        Me.colidServicio.Visible = True
+        Me.colidServicio.VisibleIndex = 2
+        Me.colidServicio.Width = 186
+        '
+        'RepositoryItemLookUpEdit4
+        '
+        Me.RepositoryItemLookUpEdit4.AutoHeight = False
+        Me.RepositoryItemLookUpEdit4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit4.DataSource = Me.XpCollection4
+        Me.RepositoryItemLookUpEdit4.DisplayMember = "Descripcion"
+        Me.RepositoryItemLookUpEdit4.Name = "RepositoryItemLookUpEdit4"
+        Me.RepositoryItemLookUpEdit4.NullText = ""
+        Me.RepositoryItemLookUpEdit4.ValueMember = "idServicio"
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Precio"
+        Me.GridColumn1.FieldName = "GridColumn1"
+        Me.GridColumn1.MinWidth = 30
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.[False]
+        Me.GridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.[Integer]
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 3
+        Me.GridColumn1.Width = 112
+        '
         'RepositoryItemLookUpEdit1
         '
         Me.RepositoryItemLookUpEdit1.AutoHeight = False
@@ -445,13 +623,6 @@ Partial Class Form1
         Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
         Me.RepositoryItemLookUpEdit1.NullText = ""
         Me.RepositoryItemLookUpEdit1.ValueMember = "idHorario"
-        '
-        'RepositoryItemComboBox1
-        '
-        Me.RepositoryItemComboBox1.AutoHeight = False
-        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"SI", "NO"})
-        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
         '
         'RepositoryItemTextEdit1
         '
@@ -548,176 +719,6 @@ Partial Class Form1
         Me.BarDockControl4.Manager = Me.BarManager2
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 1008)
         '
-        'XpCollection1
-        '
-        Me.XpCollection1.ObjectType = GetType(SistemaTurnos.BdBarberia.Turnos)
-        '
-        'colidTurno
-        '
-        Me.colidTurno.FieldName = "idTurno"
-        Me.colidTurno.MinWidth = 30
-        Me.colidTurno.Name = "colidTurno"
-        Me.colidTurno.Width = 112
-        '
-        'colFecha
-        '
-        Me.colFecha.FieldName = "Fecha"
-        Me.colFecha.MinWidth = 30
-        Me.colFecha.Name = "colFecha"
-        Me.colFecha.Visible = True
-        Me.colFecha.VisibleIndex = 0
-        Me.colFecha.Width = 132
-        '
-        'colHorario
-        '
-        Me.colHorario.ColumnEdit = Me.RepositoryItemLookUpEdit2
-        Me.colHorario.FieldName = "Horario"
-        Me.colHorario.MinWidth = 30
-        Me.colHorario.Name = "colHorario"
-        Me.colHorario.Visible = True
-        Me.colHorario.VisibleIndex = 1
-        Me.colHorario.Width = 120
-        '
-        'colNroOrden
-        '
-        Me.colNroOrden.FieldName = "NroOrden"
-        Me.colNroOrden.MinWidth = 30
-        Me.colNroOrden.Name = "colNroOrden"
-        Me.colNroOrden.Width = 111
-        '
-        'colCliente
-        '
-        Me.colCliente.FieldName = "Cliente"
-        Me.colCliente.MinWidth = 30
-        Me.colCliente.Name = "colCliente"
-        Me.colCliente.Visible = True
-        Me.colCliente.VisibleIndex = 0
-        Me.colCliente.Width = 239
-        '
-        'coldniCliente
-        '
-        Me.coldniCliente.Caption = "DNI"
-        Me.coldniCliente.FieldName = "dniCliente"
-        Me.coldniCliente.MinWidth = 30
-        Me.coldniCliente.Name = "coldniCliente"
-        Me.coldniCliente.Visible = True
-        Me.coldniCliente.VisibleIndex = 6
-        Me.coldniCliente.Width = 100
-        '
-        'coltelCliente
-        '
-        Me.coltelCliente.Caption = "Telefono"
-        Me.coltelCliente.FieldName = "telCliente"
-        Me.coltelCliente.MinWidth = 30
-        Me.coltelCliente.Name = "coltelCliente"
-        Me.coltelCliente.Visible = True
-        Me.coltelCliente.VisibleIndex = 4
-        Me.coltelCliente.Width = 100
-        '
-        'colmailCliente
-        '
-        Me.colmailCliente.Caption = "Mail"
-        Me.colmailCliente.FieldName = "mailCliente"
-        Me.colmailCliente.MinWidth = 30
-        Me.colmailCliente.Name = "colmailCliente"
-        Me.colmailCliente.Visible = True
-        Me.colmailCliente.VisibleIndex = 5
-        Me.colmailCliente.Width = 100
-        '
-        'colObservaciones
-        '
-        Me.colObservaciones.FieldName = "Observaciones"
-        Me.colObservaciones.MinWidth = 30
-        Me.colObservaciones.Name = "colObservaciones"
-        Me.colObservaciones.Visible = True
-        Me.colObservaciones.VisibleIndex = 8
-        Me.colObservaciones.Width = 113
-        '
-        'colReprogramo
-        '
-        Me.colReprogramo.ColumnEdit = Me.RepositoryItemComboBox1
-        Me.colReprogramo.FieldName = "Reprogramo"
-        Me.colReprogramo.MinWidth = 30
-        Me.colReprogramo.Name = "colReprogramo"
-        Me.colReprogramo.Visible = True
-        Me.colReprogramo.VisibleIndex = 7
-        Me.colReprogramo.Width = 100
-        '
-        'colidBarbero
-        '
-        Me.colidBarbero.Caption = "Barbero"
-        Me.colidBarbero.ColumnEdit = Me.RepositoryItemLookUpEdit3
-        Me.colidBarbero.FieldName = "idBarbero"
-        Me.colidBarbero.MinWidth = 30
-        Me.colidBarbero.Name = "colidBarbero"
-        Me.colidBarbero.Visible = True
-        Me.colidBarbero.VisibleIndex = 3
-        Me.colidBarbero.Width = 160
-        '
-        'colidServicio
-        '
-        Me.colidServicio.Caption = "Servicio"
-        Me.colidServicio.ColumnEdit = Me.RepositoryItemLookUpEdit4
-        Me.colidServicio.FieldName = "idServicio"
-        Me.colidServicio.MinWidth = 30
-        Me.colidServicio.Name = "colidServicio"
-        Me.colidServicio.Visible = True
-        Me.colidServicio.VisibleIndex = 2
-        Me.colidServicio.Width = 186
-        '
-        'XpCollection2
-        '
-        Me.XpCollection2.ObjectType = GetType(SistemaTurnos.BdBarberia.Horarios)
-        '
-        'RepositoryItemLookUpEdit2
-        '
-        Me.RepositoryItemLookUpEdit2.AutoHeight = False
-        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit2.DataSource = Me.XpCollection2
-        Me.RepositoryItemLookUpEdit2.DisplayMember = "descripcion"
-        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
-        Me.RepositoryItemLookUpEdit2.NullText = ""
-        Me.RepositoryItemLookUpEdit2.ValueMember = "idHorario"
-        '
-        'XpCollection3
-        '
-        Me.XpCollection3.ObjectType = GetType(SistemaTurnos.BdBarberia.Barberos)
-        '
-        'RepositoryItemLookUpEdit3
-        '
-        Me.RepositoryItemLookUpEdit3.AutoHeight = False
-        Me.RepositoryItemLookUpEdit3.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit3.DataSource = Me.XpCollection3
-        Me.RepositoryItemLookUpEdit3.DisplayMember = "Nombre"
-        Me.RepositoryItemLookUpEdit3.Name = "RepositoryItemLookUpEdit3"
-        Me.RepositoryItemLookUpEdit3.NullText = ""
-        Me.RepositoryItemLookUpEdit3.ValueMember = "idBarbero"
-        '
-        'XpCollection4
-        '
-        Me.XpCollection4.ObjectType = GetType(SistemaTurnos.BdBarberia.Servicios)
-        '
-        'RepositoryItemLookUpEdit4
-        '
-        Me.RepositoryItemLookUpEdit4.AutoHeight = False
-        Me.RepositoryItemLookUpEdit4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit4.DataSource = Me.XpCollection4
-        Me.RepositoryItemLookUpEdit4.DisplayMember = "Descripcion"
-        Me.RepositoryItemLookUpEdit4.Name = "RepositoryItemLookUpEdit4"
-        Me.RepositoryItemLookUpEdit4.NullText = ""
-        Me.RepositoryItemLookUpEdit4.ValueMember = "idServicio"
-        '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "Precio"
-        Me.GridColumn1.FieldName = "GridColumn1"
-        Me.GridColumn1.MinWidth = 30
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.[Integer]
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 9
-        Me.GridColumn1.Width = 112
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -734,13 +735,16 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SISTEMA DE TURNOS - STUDIO BARBER"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -751,19 +755,17 @@ Partial Class Form1
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemComboBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

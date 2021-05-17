@@ -562,3 +562,4 @@ C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurno
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\ja\DevExpress.XtraNavBar.v18.1.resources.dll
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\bin\Release\ru\DevExpress.XtraNavBar.v18.1.resources.dll
 C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.vbproj.CopyComplete
+C:\Users\jcenturion\OneDrive - DXC Production\Desktop\sistematurnos\SistemaTurnos\SistemaTurnos\obj\Release\SistemaTurnos.CAMBIARCLAVE.resources
