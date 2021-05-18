@@ -55,7 +55,7 @@ Public Class Form1
                 Exit Sub
             End If
             Dim idTurno As Integer = Session1.ExecuteScalar("SELECT MAX(idTurno) FROM Turnos") + 1
-            Session1.ExecuteNonQuery("INSERT INTO Turnos(idTurno, Fecha, Horario, NroOrden, Cliente, dniCliente, telCliente, mailCliente) VALUES(" & idTurno & ", '" & DateEdit1.EditValue & "', " & idHorario & ", " & NroOrden & ", '" & TextEdit1.Text & "', '" & TextEdit2.Text & "', '" & TextEdit3.Text & "', '" & TextEdit4.Text & "')")
+            Session1.ExecuteNonQuery("INSERT INTO Turnos(idTurno, Fecha, Horario, NroOrden, Cliente, dniCliente, telCliente, mailCliente, idBarbero, idServicio) VALUES(" & idTurno & ", '" & DateEdit1.EditValue & "', " & idHorario & ", " & NroOrden & ", '" & TextEdit1.Text & "', '" & TextEdit2.Text & "', '" & TextEdit3.Text & "', '" & TextEdit4.Text & "', " & LookUpEdit1.EditValue & ", " & LookUpEdit2.EditValue & ")")
             MsgBox("El turno fue asignado correctamente!", vbOKOnly + vbInformation, "Hecho")
         Catch ex As Exception
             MsgBox("No se ha podido asignar el turno.", vbOKOnly + vbExclamation, "Atencion")
